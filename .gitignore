@@ -8,3 +8,8 @@ public/bundle.*
 /src-cordova/www
 !/src-cordova/www/README.md
 src-cordova/config.xml.backup
+
+# Syncthing
+.stignore
+.stfolder
+.stversions
