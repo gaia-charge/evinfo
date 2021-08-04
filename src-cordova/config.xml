@@ -1,19 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello.svelte" 
+<widget id="tech.gaiagreen.evinfo" 
     version="1.0.0" 
     xmlns="http://www.w3.org/ns/widgets" 
     xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloSvelte</name>
+    <name>EV Info</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Electric vehicle information tool.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="contact@gaiagreen.tech" href="https://gaiagreen.tech">
+        Gaia Green Tech
     </author>
     <hook src="../node_modules/svelte-cordova/before-prepare.js" type="before_prepare" />
     <hook src="../node_modules/svelte-cordova/after-run.js" type="after_run" />
-    <content src="index.html" />
+    <content src="http://10.0.0.141:5000" />
+    <allow-navigation href="http://10.0.0.141:5000" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
