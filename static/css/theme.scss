@@ -1,0 +1,45 @@
+/*
+h1
+color: #011625;
+font-family: Inter;
+font-style: normal;
+font-weight: 800;
+font-size: 48px;
+line-height: 116%;
+
+h2
+font-family: Inter;
+font-style: normal;
+font-weight: 800;
+font-size: 14px;
+line-height: 17px;
+letter-spacing: 0.05em;
+
+text
+color: #1e2624; / #275e5e;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 800;
+font-size: 16px;
+line-height: 22px;
+
+bold
+font-weight: 800;
+
+button
+padding: 11px 24px;
+
+*/
+
+$color-main-dark: #4c8c40;
+$color-main-light: #98c93f;
+$color-header: #011625;
+$font: 'Nunito Sans';
+$shadow-1: none;
+$shadow-raised: none;
+
+@forward '~attractions/_variables' with (
+  $main: $color-main-dark,
+  $success: $color-main-light,
+  $font: 'Inter',
+);
