@@ -13,8 +13,7 @@
     </author>
     <hook src="../node_modules/svelte-cordova/before-prepare.js" type="before_prepare" />
     <hook src="../node_modules/svelte-cordova/after-run.js" type="after_run" />
-    <content src="http://10.0.0.141:5000" />
-    <allow-navigation href="http://10.0.0.141:5000" />
+    <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
