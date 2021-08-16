@@ -163,7 +163,10 @@ function sendLoop() {
 
 :global(h1) {
     font-family: Inter;
+    font-weight: 700 !important;
+    font-size: 1.5em !important;
     margin: 0;
+    color: #011625 !important;
 }
 
 :global(.label, label .content) {
