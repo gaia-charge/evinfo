@@ -1,7 +1,9 @@
 // When not running in Cordova (i.e. testing in browser), inject necessary shims
 if (!window.hasOwnProperty('cordova')) {
+    const log = (message) => console.log(`%c DesktopShim ${message}`, 'font-weight: bold')
     window.bluetoothSerial = {
         list: (success) => {
+            log('Listed devices')
             success([
                 {
                     'id': 'CC410A23-2865-F03E-FC6A-4C17E858E11E',
@@ -25,7 +27,31 @@ if (!window.hasOwnProperty('cordova')) {
                     'rssi': -98
                 }
             ])
-        }
+        },
+        connect: (macAddressOrUuid, success) => {
+            log(`Connected to ${macAddressOrUuid}`)
+            success()
+        },
+        disconnect: (success) => {
+            log('Disconnected')
+            success()
+        },
+        write: (data, success) => {
+            log(`Wrote: "${data}"`)
+            success()
+        },
+        subscribe: (delimiter, success) => {
+            log(`Subscribed to "${delimiter}"`)
+            success()
+        },
+        unsubscribe: (success) => {
+            log('Unsubscribed')
+            success()
+        },
+        clear: (success) => {
+            log('Cleared the buffer')
+            success()
+        },
     }
     
     setTimeout(() => document.dispatchEvent(new Event('deviceready')), 100)
