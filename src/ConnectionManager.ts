@@ -1,4 +1,6 @@
-import type { AdapterType } from "./adapters/BaseAdapter";
+import { get } from 'svelte/store'
+import type { AdapterType } from './adapters/BaseAdapter';
+import { SettingsType, settings } from './stores';
 
 export interface ConnectionManagerType {
     listDevices(): Promise<[BluetoothDeviceType]>,
@@ -9,6 +11,11 @@ export interface ConnectionManagerType {
 export default class ConnectionManager implements ConnectionManagerType {
     currentDevice: string
     adapter: AdapterType
+
+    constructor () {
+        const initialSettings:SettingsType = get(settings)
+        this.currentDevice = initialSettings.currentDevice
+    }
 
     async listDevices () {
         return new Promise<[BluetoothDeviceType]>((resolve, reject) => {
@@ -22,5 +29,9 @@ export default class ConnectionManager implements ConnectionManagerType {
 
     selectDevice(id: string) {
         this.currentDevice = id
+        settings.update((settings:SettingsType) => {
+            settings.currentDevice = id
+            return settings
+        })
     }
 }

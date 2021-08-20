@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
-    "svelte-cordova": "^1.0.6"
+    "svelte-cordova": "^1.0.6",
+    "svelte-local-storage-store": "^0.2.3"
   },
   "scripts": {
     "build": "rollup -c",
