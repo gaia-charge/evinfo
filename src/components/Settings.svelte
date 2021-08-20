@@ -36,7 +36,7 @@ label {
 }
 </style>
 
-<Card style="width: calc(100% - 3rem);">
+<Card style="width: calc(100% - 3rem); position: relative;">
     <H1 style="display: flex; justify-content: space-between;">
         Select adapter
         <Button filled small on:click={listDevices}>

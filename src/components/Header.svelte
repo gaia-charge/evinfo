@@ -17,7 +17,7 @@ header {
   align-items: center;
 }
 </style>
-<script>
+<script lang="ts">
     import { Headline, Dot, Button } from 'attractions'
     import { HelpCircleIcon, SettingsIcon } from 'svelte-feather-icons'
 

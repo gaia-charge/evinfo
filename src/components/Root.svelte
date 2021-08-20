@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 import Header from './Header.svelte'
 import BatteryInfo from './BatteryInfo.svelte'
 import BatteryGraph from './BatteryGraph.svelte'
 import Background from './Background.svelte'
 import DataPanels from './DataPanels.svelte'
 import Settings from './Settings.svelte'
-import ConnectionManager from '../ConnectionManager.ts'
+import ConnectionManager from '../ConnectionManager'
 
 const connectionManager = new ConnectionManager()
 

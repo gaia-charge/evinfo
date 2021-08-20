@@ -11,6 +11,7 @@
 
 .battery-graph {
     margin-top: 2rem;
+    position: relative;
 }
 </style>
 

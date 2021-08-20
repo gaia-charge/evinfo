@@ -13,11 +13,20 @@ if (!window.hasOwnProperty('cordova')) {
                     'uuid': '4C17E858-FC6A-F03E-2865-CC410A23E11E',
                     'name': 'ODB2',
                     'rssi': -35
+                }, {
+                    'id': 'F03E0A23-2865-CC41-FC6A-4C17E858E11E',
+                    'uuid': 'F03E0A23-2865-CC41-FC6A-4C17E858E11E',
+                    'name': 'Samsung TV',
+                    'rssi': -23
+                }, {
+                    'id': '2865E858-FC6A-F03E-4C17-CC410A23E11E',
+                    'uuid': '2865E858-FC6A-F03E-4C17-CC410A23E11E',
+                    'name': 'Apple Watch',
+                    'rssi': -98
                 }
             ])
         }
     }
-    
     
     setTimeout(() => document.dispatchEvent(new Event('deviceready')), 100)
 }
