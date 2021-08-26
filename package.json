@@ -6,6 +6,7 @@
     "@rollup/plugin-typescript": "^8.2.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@tsconfig/svelte": "^2.0.1",
+    "@types/jest": "^27.0.1",
     "attractions": "^3.3.0",
     "cross-env": "^5.2.0",
     "fs-extra": "^8.1.0",
@@ -54,22 +55,6 @@
     "cordova-run-ios": "cd src-cordova && cordova run ios",
     "test": "jest src",
     "test:watch": "npm run test -- --watch"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.svelte$": [
-        "svelte-jester",
-        {
-          "preprocess": true
-        }
-      ],
-      "^.+\\.ts$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "svelte"
-    ]
   },
   "setupFilesAfterEnv": [
     "@testing-library/jest-dom/extend-expect"
