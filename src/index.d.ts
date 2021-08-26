@@ -9,7 +9,7 @@ declare interface BluetoothDeviceType {
     rssi?: number
 }
 
-declare var bluetoothSerial: {
+declare interface BluetoothSerialType {
     list(success?: (foundDevices:[BluetoothDeviceType]) => void, failure?: Function),
     connect(macAddressOrUuid: string, success?: Function, failure?: (error) => void),
     disconnect(success?: Function, failure?: Function),
@@ -18,3 +18,5 @@ declare var bluetoothSerial: {
     unsubscribe(success?: Function, failure?: Function),
     clear(success?: Function, failure?: Function),
 }
+
+declare var bluetoothSerial:BluetoothSerialType

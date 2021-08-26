@@ -186,7 +186,7 @@ function sendLoop() {
 
 </style>
 
-<Header connected={connected} showSettings={() => showSettings = !showSettings} />
+<Header connectionManager={connectionManager} showSettings={() => showSettings = !showSettings} />
 
 <div class="content">
     <Background />

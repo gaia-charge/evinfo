@@ -20,10 +20,13 @@ header {
 <script lang="ts">
     import { Headline, Dot, Button } from 'attractions'
     import { HelpCircleIcon, SettingsIcon } from 'svelte-feather-icons'
+    import { ConnectionState } from '../ConnectionManager'
+    import type { ConnectionManagerType } from '../ConnectionManager'
 
-    export let connected = false
+    export let connectionManager: ConnectionManagerType
     export let showHelp = () => {}
     export let showSettings = () => {}
+    let { state } = connectionManager
 </script>
 
 <header>
@@ -31,9 +34,12 @@ header {
         <HelpCircleIcon size="1x" />
     </Button>
     <div class="connection-status">
-        {#if connected}
+        {#if $state === ConnectionState.Connected}
             <Dot success class="mr" />
             <Headline>Connected</Headline>
+        {:else if $state === ConnectionState.Connecting}
+            <Dot attention class="mr" />
+            <Headline>Connecting...</Headline>
         {:else}
             <Dot danger class="mr" />
             <Headline>Not connected</Headline>

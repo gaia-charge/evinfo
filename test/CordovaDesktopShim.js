@@ -29,8 +29,11 @@ if (!window.hasOwnProperty('cordova')) {
             ])
         },
         connect: (macAddressOrUuid, success) => {
-            log(`Connected to ${macAddressOrUuid}`)
-            success()
+            log(`Connecting to ${macAddressOrUuid}...`)
+            setTimeout(() => {
+                log(`Connected to ${macAddressOrUuid}`)
+                success()
+            }, 1000)
         },
         disconnect: (success) => {
             log('Disconnected')
