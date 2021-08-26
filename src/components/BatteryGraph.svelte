@@ -17,7 +17,7 @@
 
 <script>
     import { Card, Tabs } from 'attractions'
-    import { Line } from '../../svelte-chartjs/src/index'
+    import { Line } from 'svelte-chartjs/src/index'
 
     const data = [
         // ['16', 17.4],
