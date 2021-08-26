@@ -10,7 +10,7 @@ declare interface BluetoothDeviceType {
 }
 
 declare interface BluetoothSerialType {
-    list(success?: (foundDevices:[BluetoothDeviceType]) => void, failure?: Function),
+    list(success?: (foundDevices:Array<BluetoothDeviceType>) => void, failure?: Function),
     connect(macAddressOrUuid: string, success?: Function, failure?: (error) => void),
     disconnect(success?: Function, failure?: Function),
     write(data: string|Uint8Array, success?: Function, failure?: Function),

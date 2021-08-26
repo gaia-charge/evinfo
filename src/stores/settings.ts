@@ -4,7 +4,7 @@ export interface SettingsType {
     currentDevice?: string
 }
 
-export const initialSettings:SettingsType = {
+export const initialSettings: SettingsType = {
     currentDevice: undefined
 }
 

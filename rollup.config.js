@@ -19,7 +19,7 @@ if (process.env.CORDOVA_PLATFORM) {
 console.log(`publicFolder is ${publicFolder}`)
 
 export default {
-	input: 'src/main.js',
+	input: 'src/main.ts',
 	output: {
 		sourcemap: true,
 		format: 'iife',
