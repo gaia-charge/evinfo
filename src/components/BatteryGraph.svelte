@@ -82,7 +82,7 @@
                 ticks: {
                     ...scaleStyle.ticks,
                     maxRotation: 0,
-                    callback: function (value, index) {
+                    callback: function (value) {
                         const label = this.getLabelForValue(value)
                         return label % 5 === 0 ? label : ''
                     }
