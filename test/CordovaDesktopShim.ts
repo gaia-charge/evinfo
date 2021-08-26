@@ -1,6 +1,8 @@
+import { log } from '../src/stores/logger'
+
 // When not running in Cordova (i.e. testing in browser), inject necessary shims
 if (!window.hasOwnProperty('cordova')) {
-    const log = (message) => console.log(`%c DesktopShim ${message}`, 'font-weight: bold')
+    // const log = (message) => console.log(`%c DesktopShim ${message}`, 'font-weight: bold')
     window.bluetoothSerial = {
         list: (success) => {
             log('Listed devices')

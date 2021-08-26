@@ -1,8 +1,9 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 import { Button, Card, H1, Label } from 'attractions'
-import { RefreshCcwIcon } from 'svelte-feather-icons'
+import { RefreshCcwIcon, Trash2Icon } from 'svelte-feather-icons'
 import type ConnectionManager from '../ConnectionManager'
+import { logger, clear } from '../stores/logger'
 
 export let connectionManager:ConnectionManager
 let availableDevices = []
@@ -52,4 +53,20 @@ label {
             </div>
         </label>
     {/each}
+</Card>
+
+<Card style="width: calc(100% - 3rem); position: relative; margin-top: 1.25rem;">
+    <H1 style="display: flex; justify-content: space-between;">
+        Debug log
+        <Button filled small on:click={clear}>
+            <Trash2Icon size="1x" />
+        </Button>
+    </H1>
+    <code>
+        <pre>
+            {#each $logger as logline}
+                {logline}
+            {/each}
+        </pre>
+    </code>
 </Card>

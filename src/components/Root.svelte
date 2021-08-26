@@ -10,19 +10,13 @@ import ConnectionManager from '../ConnectionManager'
 const connectionManager = new ConnectionManager()
 
 let showSettings = !false
-let showLog = false
-let logger = []
-
-function msg(message: string) {
-    logger = [...logger, `${message}\n`]
-}
 
 function connectionSuccess() {
     bluetoothSerial.unsubscribe()
     bluetoothSerial.clear()
     bluetoothSerial.subscribe('>', (data: string) => {
         if (data != '') {
-            msg(`In: ${data}`)
+            // msg(`In: ${data}`)
             bluetoothSerial.clear()
         }
     })
@@ -90,15 +84,5 @@ function writeData(dataString: string){
         <BatteryInfo percent={69} range={123} />
         <BatteryGraph />
         <DataPanels />
-    {/if}
-    
-    {#if showLog}
-        <code>
-            <pre>
-                {#each logger as logline}
-                    {logline}
-                {/each}
-            </pre>
-        </code>
     {/if}
 </div>
