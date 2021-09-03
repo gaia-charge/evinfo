@@ -20,15 +20,17 @@ export default class ConnectionManager implements ConnectionManagerType {
     currentDevice: string
     state: Writable<ConnectionState> = writable(ConnectionState.Disconnected)
     adapter: AdapterType
+    bluetoothSerial: BluetoothSerialType
 
-    constructor () {
-        const initialSettings:SettingsType = get(settings)
+    constructor (_bluetoothSerial=bluetoothSerial) {
+        this.bluetoothSerial = _bluetoothSerial
+        const initialSettings: SettingsType = get(settings)
         this.currentDevice = initialSettings.currentDevice
     }
 
     async listDevices () {
         return new Promise<[BluetoothDeviceType]>((resolve, reject) => {
-            bluetoothSerial.list((foundDevices:[BluetoothDeviceType]) => {
+            this.bluetoothSerial.list((foundDevices:[BluetoothDeviceType]) => {
                 resolve(foundDevices)
             }, (error) => {
                 reject(error)
@@ -49,7 +51,7 @@ export default class ConnectionManager implements ConnectionManagerType {
     async connect() {
         const promise = new Promise<void>((resolve, reject) => {
             this.state.set(ConnectionState.Connecting)
-            bluetoothSerial.connect(this.currentDevice, () => {
+            this.bluetoothSerial.connect(this.currentDevice, () => {
                 this.state.set(ConnectionState.Connected)
                 resolve()
             }, () => {
@@ -64,7 +66,7 @@ export default class ConnectionManager implements ConnectionManagerType {
 
     async disconnect() {
         const promise = new Promise<void>((resolve, reject) => {
-            bluetoothSerial.disconnect(() => {
+            this.bluetoothSerial.disconnect(() => {
                 this.state.set(ConnectionState.Disconnected)
                 resolve()
             }, () => {
