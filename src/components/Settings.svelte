@@ -3,7 +3,7 @@ import { onMount } from 'svelte'
 import { Button, Card, H1, Label } from 'attractions'
 import { RefreshCcwIcon, Trash2Icon } from 'svelte-feather-icons'
 import type ConnectionManager from '../ConnectionManager'
-import { logger, clear } from '../stores/logger'
+import { logger, clear } from '../stores/Logger'
 
 export let connectionManager:ConnectionManager
 let availableDevices = []

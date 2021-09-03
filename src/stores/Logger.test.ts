@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import { logger, log, clear } from './logger'
+import { logger, log, clear } from './Logger'
 
 describe('logger store', () => {
     beforeEach(() => logger.set([]))

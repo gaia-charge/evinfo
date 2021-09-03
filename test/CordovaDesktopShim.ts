@@ -1,4 +1,4 @@
-import { log } from '../src/stores/logger'
+import { log } from '../src/stores/Logger'
 
 // When not running in Cordova (i.e. testing in browser), inject necessary shims
 if (!window.hasOwnProperty('cordova')) {
