@@ -53,7 +53,7 @@
     "build-ios": "cross-env CORDOVA_PLATFORM=ios CORDOVA_PROD=true npm run build-ios-subtask",
     "build-ios-subtask": "npm run build && cd src-cordova && cordova build ios",
     "cordova-run-ios": "cd src-cordova && cordova run ios",
-    "test": "jest src",
+    "test": "jest --coverage src",
     "test:watch": "npm run test -- --watch"
   },
   "setupFilesAfterEnv": [
