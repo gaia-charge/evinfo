@@ -1,6 +1,6 @@
 import { get, writable, Writable } from 'svelte/store'
 import type { AdapterType } from './adapters/BaseAdapter';
-import { SettingsType, settings } from './stores/settings';
+import { SettingsType, settings } from './stores/Settings';
 
 export interface ConnectionManagerType {
     listDevices(): Promise<[BluetoothDeviceType]>,
